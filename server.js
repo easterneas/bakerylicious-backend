@@ -1,6 +1,6 @@
 const app = require('./app')
 
-const PORT = process.env.SERVER_PORT || 3457
+const PORT = process.env.PORT || 3457
 
 const start = async () => {
   try {
