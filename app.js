@@ -1,4 +1,4 @@
-process.env.NODE_ENV === 'development' && require('dotenv')
+if(process.env.NODE_ENV !== 'production') require('dotenv').config()
 
 const app = require('fastify')({ logger: true })
 
