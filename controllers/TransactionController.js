@@ -8,7 +8,7 @@ module.exports = {
     let data = JSON.parse(await redis.get('transactions'))
 
     if(!data){
-      data = await Transaction.findAll({ include: { model: 'Customer' } })
+      data = await Transaction.findAll({ include: 'Customer' })
 
       await redis.set('transactions', JSON.stringify(data))
     }
