@@ -30,7 +30,10 @@ module.exports = {
     let data = JSON.parse(await redis.get(`category-id-${CategoryId}`))
 
     if(!data) {
-      data = await Category.findByPk(CategoryId)
+      data = await Category.findByPk(CategoryId, { include: 'Products' })
+
+      if(!data) throw new Error('No such ID')
+
       await redis.set(`category-id-${CategoryId}`, JSON.stringify(data))
     }
 
@@ -38,5 +41,18 @@ module.exports = {
       data,
       code: 200
     }
-  }
+  },
+
+  // create, update, and delete
+  addNewCategory: async function(req, reply){
+    // 
+  },
+
+  updateCategory: async function(req, reply){
+    // 
+  },
+
+  deleteCategory: async function(req, reply){
+    // 
+  },
 }
