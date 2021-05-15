@@ -6,6 +6,7 @@ app.setErrorHandler(require('./middleware/error-handler'))
 
 app
 // register plugins
+.register(require('fastify-cookie'), require('./config/cookie.js'))
 .register(require('fastify-cors'), require('./config/cors.js'))
 .register(require('fastify-redis'), require('./config/redis.js'))
 .register(require('fastify-bcrypt'), require('./config/bcrypt.js'))
