@@ -5,5 +5,5 @@ module.exports = {
     // 
   },
 
-  register: async () => {} // deliberately empty for now
+  register: async function(){} // deliberately empty for now
 }
